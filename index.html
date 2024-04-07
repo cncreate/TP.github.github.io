@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <!--头部-->
+    <header>
+      <h1>大学生综合素质测评可视化系统</h1><!--标题-->
+      <h2>数据来源:信息工程学院2021级学生</h2>
+      <div class="showTime"></div><!--显示时间-->
+      <script>
+        var t = null;
+        t = setTimeout(time, 1000); //开始运行
+        function time() {
+          clearTimeout(t); //清除定时器
+          dt = new Date();
+          var y = dt.getFullYear();
+          var mt = dt.getMonth() + 1;  //注：月份是从0开始计数的，所以需要加1
+          var day = dt.getDate();
+          var h = dt.getHours(); //获取时
+          var m = dt.getMinutes(); //获取分
+          var s = dt.getSeconds(); //获取秒
+          document.querySelector(".showTime").innerHTML =
+            "当前时间：" +
+            y +
+            "年" +
+            mt +
+            "月" +
+            day +
+            "日-" +
+            h +
+            "时" +
+            m +
+            "分" +
+            s +
+            "秒";
+          t = setTimeout(time, 1000); //设定定时器，循环运行
+        }
+      </script>
+    </header>
+
+    <!--页面主体-->
+    <section class="mainbox"><!--设定3:5:3的布局-->
+      <div class="column"><!--左边的盒子-->
+        <div class="panel bar">
+          <h3>各班班级人数情况</h3><!--柱形图-->
+          <div class="chart">图表</div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel line">
+          <h3>学生党员发展情况</h3><!--折线图-->
+          <div class="chart">图表</div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel pie">
+          <h3>参与社会实践情况(人次)</h3><!--饼形图-->
+          <div class="chart">图表</div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+
+      <div class="column"><!--中间的盒子-->
+        <!--no模块制作-->
+        <div class="no">
+          <div class="no-hd"><!--数字-->
+            <ul>
+              <li>40</li>
+              <li>40</li>
+              <li>36</li>
+              <li>46</li>
+              <li>38</li>
+            </ul>
+          </div>
+          <div class="no-bd"><!--文字-->
+            <ul>
+              <li>大数据一班</li>
+              <li>大数据二班</li>
+              <li>数媒一班</li>
+              <li>数媒二班</li>
+              <li>物联网本科班</li>
+            </ul>
+          </div>
+        </div>
+        <!--地图模块制作-->
+        <div class="map">
+          <div class="map1"></div>
+          <div class="map2"></div>
+          <div class="map3"></div>
+          <div class="chart">地图模块</div>
+        </div>
+      </div>
+
+      <div class="column"><!--右边的盒子-->
+        <div class="panel bar2">
+          <h3>各班学生成绩平均合格率</h3><!--柱形图-->
+          <div class="chart">图表</div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel line2">
+          <h3>学生相关资格证取得情况</h3><!--折线图-->
+          <div class="chart">图表</div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel pie2">
+          <h3>参与竞赛活动情况</h3><!--饼形图-->
+          <div class="chart">图表</div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+    </section>
+    <script src="js/flexible.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/china.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
